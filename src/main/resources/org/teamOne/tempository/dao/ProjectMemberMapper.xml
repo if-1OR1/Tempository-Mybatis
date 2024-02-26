@@ -9,7 +9,6 @@
         <result property="position" column="POSITION"/>
         <result property="memberInviteStatus" column="MEMBER_INVITE_STATUS"/>
     </resultMap>
-    
     <select id="isProjectMember" resultMap="projectMemberMap" parameterType="org.teamOne.tempository.aggregate.ProjectMember">
         SELECT *
           FROM TBL_PROJECT_MEMBER
