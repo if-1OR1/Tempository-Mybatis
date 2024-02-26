@@ -4,7 +4,7 @@ public class ProjectMember {
     private int memberId;
     private int projectId;
     private String position;
-    private String memberInviteStatus;
+    private String memberStatus;
 
     public ProjectMember() {
     }
@@ -18,7 +18,7 @@ public class ProjectMember {
         this.memberId = memberId;
         this.projectId = projectId;
         this.position = position;
-        this.memberInviteStatus = memberInviteStatus;
+        this.memberStatus = memberInviteStatus;
     }
 
     public int getMemberId() {
@@ -33,8 +33,8 @@ public class ProjectMember {
         return position;
     }
 
-    public String getMemberInviteStatus() {
-        return memberInviteStatus;
+    public String getMemberStatus() {
+        return memberStatus;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ProjectMember {
                 "memberId=" + memberId +
                 ", projectId=" + projectId +
                 ", position='" + position + '\'' +
-                ", memberInviteStatus='" + memberInviteStatus + '\'' +
+                ", memberInviteStatus='" + memberStatus + '\'' +
                 '}';
     }
 }

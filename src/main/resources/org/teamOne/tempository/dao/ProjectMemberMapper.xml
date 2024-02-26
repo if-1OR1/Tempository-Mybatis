@@ -7,7 +7,7 @@
         <id property="memberId" column="MEMBER_ID"/>
         <id property="projectId" column="PROJECT_ID"/>
         <result property="position" column="POSITION"/>
-        <result property="memberInviteStatus" column="MEMBER_INVITE_STATUS"/>
+        <result property="memberStatus" column="MEMBER_STATUS"/>
     </resultMap>
     <select id="isProjectMember" resultMap="projectMemberMap" parameterType="org.teamOne.tempository.aggregate.ProjectMember">
         SELECT *
