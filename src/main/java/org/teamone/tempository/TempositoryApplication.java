@@ -8,6 +8,7 @@ public class TempositoryApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TempositoryApplication.class, args);
+
     }
 
 }
