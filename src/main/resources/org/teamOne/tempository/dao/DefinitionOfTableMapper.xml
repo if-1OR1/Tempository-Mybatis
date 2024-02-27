@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.teamOne.tempository.dao.DefinitionOfTableMapper">
+    <resultMap id="definitionOfTableMap" type="org.teamOne.tempository.aggregate.DefinitionOfTable">
+        <id property="definitionId" column="ID"/>
+        <id property="projectId" column="PROJECT_ID"/>
+        <result property="definitionNo" column="DEFINITION_NO"/>
+        <result property="tableName" column="NAME"/>
+        <result property="propertyName" column="PROPERTY_NAME"/>
+        <result property="primaryKey" column="PRIMARY_KEY"/>
+        <result property="foreignKey" column="FOREIGN_KEY"/>
+        <result property="nullable" column="NULL_ABLE"/>
+        <result property="columnName" column="COLUMN_NAME"/>
+        <result property="defaultValue" column="DEFAULT_VALUE"/>
+        <result property="dataType" column="DATA_TYPE"/>
+        <result property="note" column="NOTE"/>
+    </resultMap>
+
+    <select id="isDefinitionOfTable" resultMap="definitionOfTableMap">
+        SELECT *
+        FROM TBL_PROJECT_DEFINITION_OF_TABLE
+        WHERE PROJECT_ID = #{ projectId }
+    </select>
+</mapper>
