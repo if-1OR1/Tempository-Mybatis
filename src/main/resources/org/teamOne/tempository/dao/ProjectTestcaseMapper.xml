@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.teamOne.tempository.dao.ProjectTestcaseMapper">
+    <resultMap id="projectTestcaseMap" type="org.teamOne.tempository.aggregate.ProjectTestcase">
+        <id property="id" column="ID"/>
+        <result property="testNo" column="TEST_NO"/>
+        <result property="separate" column="SEPARATE"/>
+        <result property="content" column="CONTENT"/>
+        <result property="expectedValue" column="EXPECTED_VALUE"/>
+        <result property="result" column="RESULT"/>
+        <result property="note" column="NOTE"/>
+        <result property="projectId" column="PROJECT_ID"/>
+    </resultMap>
+    <select id="findAllTestcaseByProjectId" resultMap="projectTestcaseMap" parameterType="org.teamOne.tempository.aggregate.ProjectTestcase">
+        SELECT
+        ID
+        , TEST_NO
+        , SEPARATE
+        , CONTENT
+        , EXPECTED_VALUE
+        , RESULT
+        , NOTE
+        , PROJECT_ID
+        FROM TBL_PROJECT_TESTCASE
+        WHERE PROJECT_ID = #{projectId};
+    </select>
+</mapper>
