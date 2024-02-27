@@ -23,4 +23,12 @@
           FROM TBL_PROJECT_MEMBER
          WHERE PROJECT_ID = #{ projectId }
     </select>
+
+    <select id="findProjectsByUserId" resultMap="projectMemberMap">
+        SELECT
+               PROJECT_ID
+             , POSITION
+          FROM TBL_PROJECT_MEMBER
+         WHERE MEMBER_ID = #{ memberId } AND MEMBER_STATUS = 'JOIN'
+    </select>
 </mapper>
