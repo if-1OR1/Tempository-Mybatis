@@ -7,5 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface RequirementMapper {
-    List<Requirement> selectAll(Requirement requirement);
+
+    List<Requirement> requirementInfoByProjectId(Requirement requirements);
+
 }
