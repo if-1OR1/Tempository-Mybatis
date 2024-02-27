@@ -6,7 +6,6 @@ import org.teamOne.tempository.aggregate.Requirement;
 import org.teamOne.tempository.dao.RequirementMapper;
 import org.teamOne.tempository.dto.RequirementDTO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,14 +17,15 @@ public class RequirementService {
         this.requirementMapper = requirementMapper;
     }
 
-    public List<Requirement> SelectAll(RequirementDTO requirement) {
+    public List<Requirement> requirementInfoByProjectId(RequirementDTO requirement) {
+
         Requirement requirements = new Requirement(requirement.getProject_id());
 
 
-        List<Requirement> result = requirementMapper.selectAll(requirements);
+        List<Requirement> result = requirementMapper.requirementInfoByProjectId(requirements);
 
+        result.forEach(System.out::println);
 
-        System.out.println(result);
         return result;
     }
 }
