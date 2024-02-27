@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface DefinitionOfTableMapper {
     List<DefinitionOfTable> selectAllDefinitionOfTables(DefinitionOfTable definitionOfTable);
+
+    DefinitionOfTable getDefinitionOfTableById(int tableId);
 }

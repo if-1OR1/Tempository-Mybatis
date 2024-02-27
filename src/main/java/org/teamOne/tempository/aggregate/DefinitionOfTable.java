@@ -1,7 +1,7 @@
 package org.teamOne.tempository.aggregate;
 
 public class DefinitionOfTable {
-    private int definitionId;
+    private int tableId;
     private int definitionNo;
     private String tableName;
     private String propertyName;
@@ -22,7 +22,7 @@ public class DefinitionOfTable {
     }
 
     public DefinitionOfTable(int definitionId, int definitionNo, String tableName, String propertyName, boolean primaryKey, boolean foreignKey, boolean nullable, String columnName, String defaultValue, String dataType, String note, int projectId) {
-        this.definitionId = definitionId;
+        this.tableId = definitionId;
         this.definitionNo = definitionNo;
         this.tableName = tableName;
         this.propertyName = propertyName;
@@ -36,8 +36,8 @@ public class DefinitionOfTable {
         this.projectId = projectId;
     }
 
-    public int getDefinitionId() {
-        return definitionId;
+    public int getTableId() {
+        return tableId;
     }
 
     public int getDefinitionNo() {
@@ -87,7 +87,7 @@ public class DefinitionOfTable {
     @Override
     public String toString() {
         return "DefinitionOfTable{" +
-                "definitionId=" + definitionId +
+                "definitionId=" + tableId +
                 ", definitionNo=" + definitionNo +
                 ", tableName='" + tableName + '\'' +
                 ", propertyName='" + propertyName + '\'' +

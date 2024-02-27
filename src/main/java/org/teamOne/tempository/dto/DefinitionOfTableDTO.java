@@ -17,6 +17,7 @@ public class DefinitionOfTableDTO {
     public DefinitionOfTableDTO() {
     }
 
+
     public DefinitionOfTableDTO(int projectId) {
         this.projectId = projectId;
     }

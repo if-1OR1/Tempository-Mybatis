@@ -5,7 +5,7 @@
 <mapper namespace="org.teamOne.tempository.dao.DefinitionOfTableMapper">
 
     <resultMap id="selectAllDefinitionMap" type="org.teamOne.tempository.aggregate.DefinitionOfTable">
-        <id property="definitionId" column="ID"/>
+        <id property="tableId" column="ID"/>
         <id property="projectId" column="PROJECT_ID"/>
         <result property="definitionNo" column="DEFINITION_NO"/>
         <result property="tableName" column="TABLE_NAME"/>
@@ -33,5 +33,23 @@
         , PROJECT_ID
         FROM TBL_PROJECT_DEFINITION_OF_TABLE
         WHERE PROJECT_ID = #{projectId}
+    </select>
+
+    <select id="getDefinitionOfTableById" resultMap="selectAllDefinitionMap">
+        SELECT
+          ID
+        , DEFINITION_NO
+        , NAME AS TABLE_NAME
+        , PROPERTY_NAME
+        , PRIMARY_KEY
+        , FOREIGN_KEY
+        , NULL_ABLE
+        , COLUMN_NAME
+        , DEFAULT_VALUE
+        , DATA_TYPE
+        , NOTE
+        , PROJECT_ID
+        FROM TBL_PROJECT_DEFINITION_OF_TABLE
+        WHERE ID = #{tableId}
     </select>
 </mapper>

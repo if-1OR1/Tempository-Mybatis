@@ -26,4 +26,11 @@ public class DefinitionOfTableService {
 
         return result;
     }
+
+    public DefinitionOfTable findByTableId(int tableId) {
+        DefinitionOfTable foundTable = definitionOfTableMapper.getDefinitionOfTableById(tableId);
+
+        return foundTable;
+
+    }
 }

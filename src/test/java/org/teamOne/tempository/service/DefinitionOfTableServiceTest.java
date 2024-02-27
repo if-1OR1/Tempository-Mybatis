@@ -9,6 +9,8 @@ import org.teamOne.tempository.dto.DefinitionOfTableDTO;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 class DefinitionOfTableServiceTest {
 
@@ -21,5 +23,14 @@ class DefinitionOfTableServiceTest {
         DefinitionOfTableDTO definitionDTO = new DefinitionOfTableDTO(1);
         List<DefinitionOfTable> selectAllDefinition = definitionOfTableService.selectAllDefinitionOfTables(definitionDTO);
         selectAllDefinition.forEach(System.out::println);
+    }
+
+    @DisplayName("테이블 ID에 해당하는 테이블 정의서")
+    @Test
+    void selectByTableId() {
+        int tableId = 1;
+        DefinitionOfTable foundTable = definitionOfTableService.findByTableId(tableId);
+        assertEquals(foundTable.getTableName(), "테이블명1");
+        System.out.println("foundTable = " + foundTable);
     }
 }
