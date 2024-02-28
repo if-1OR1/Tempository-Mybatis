@@ -19,6 +19,7 @@ public class DefinitionOfTableService {
         this.definitionOfTableMapper = definitionOfTableMapper;
     }
 
+    /* 설명. Project ID로 해당 테이블 정의서 모두 조회 */
     public List<DefinitionOfTable> selectAllDefinitionOfTables(DefinitionOfTableDTO definitionDTO) {
 
         DefinitionOfTable definitionOfTable = new DefinitionOfTable(definitionDTO.getProjectId());
@@ -27,6 +28,7 @@ public class DefinitionOfTableService {
         return result;
     }
 
+    /* 설명. Table ID로 해당 테이블 정의서 조회  -> 한 행만 조회 가능(하단에 개선하여 기능 구현) */
     public DefinitionOfTable findByTableId(int tableId) {
         DefinitionOfTable foundTable = definitionOfTableMapper.getDefinitionOfTableById(tableId);
 
@@ -34,6 +36,7 @@ public class DefinitionOfTableService {
 
     }
 
+    /* 설명. Table Name 으로 해당 테이블 정의서 모두 조회 */
     public List<DefinitionOfTable> selectTableByName(DefinitionOfTableDTO definitionDTO) {
         DefinitionOfTable definitionOfTable = new DefinitionOfTable(definitionDTO.getTableName());
         List<DefinitionOfTable> result = definitionOfTableMapper.selectDefinitionOfTableByName(definitionOfTable);
