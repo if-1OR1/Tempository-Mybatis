@@ -17,6 +17,7 @@ public class ProjectTestcase {
         this.projectId = projectId;
     }
 
+
     public ProjectTestcase(int id, int testNo, String separate, String content, String expectedValue, String result, String note, int projectId) {
         this.id = id;
         this.testNo = testNo;

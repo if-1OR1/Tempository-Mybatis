@@ -9,4 +9,6 @@ import java.util.List;
 @Mapper
 public interface ProjectTestcaseMapper {
     List<ProjectTestcase> findAllTestcaseByProjectId(int projectId);
+
+    List<ProjectTestcase> findAllTestcaseBySeparate(String separate);
 }

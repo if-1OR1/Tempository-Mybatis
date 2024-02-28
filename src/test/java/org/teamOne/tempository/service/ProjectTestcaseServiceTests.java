@@ -25,4 +25,12 @@ class ProjectTestcaseServiceTests {
         Assertions.assertNotNull(projectTestcases);
     }
 
+    @DisplayName("테스트_구분으로 테스트케이스 전체 조회")
+    @Test
+    void findAllTestcaseBySeparate() {
+        List<ProjectTestcase> projectTestcases = projectTestcaseService.findAllTestcaseBySeparate("회원가입");
+
+        Assertions.assertNotNull(projectTestcases);
+    }
+
 }

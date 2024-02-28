@@ -15,7 +15,7 @@
     </resultMap>
     <select id="findAllTestcaseByProjectId" resultMap="projectTestcaseMap" parameterType="org.teamOne.tempository.aggregate.ProjectTestcase">
         SELECT
-               ID
+                ID
               , TEST_NO
               , SEPARATE
               , CONTENT
@@ -25,5 +25,18 @@
               , PROJECT_ID
           FROM TBL_PROJECT_TESTCASE
          WHERE PROJECT_ID = #{projectId};
+    </select>
+    <select id="findAllTestcaseBySeparate" resultMap="projectTestcaseMap" parameterType="string">
+        SELECT
+               ID
+              , TEST_NO
+              , SEPARATE
+              , CONTENT
+              , EXPECTED_VALUE
+              , RESULT
+              , NOTE
+              , PROJECT_ID
+          FROM TBL_PROJECT_TESTCASE
+         WHERE SEPARATE = #{separate};
     </select>
 </mapper>

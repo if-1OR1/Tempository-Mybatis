@@ -26,4 +26,12 @@ public class ProjectTestcaseService {
 
         return projectTestcases;
     }
+
+    /* 설명. 테스트_구분으로 해당 테스트케이스 조회 */
+    public List<ProjectTestcase> findAllTestcaseBySeparate(String separate) {
+        List<ProjectTestcase> projectTestcases = projectTestcaseMapper.findAllTestcaseBySeparate(separate);
+        projectTestcases.forEach(System.out::println);
+
+        return projectTestcases;
+    }
 }
