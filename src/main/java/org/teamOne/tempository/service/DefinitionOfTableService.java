@@ -21,7 +21,7 @@ public class DefinitionOfTableService {
 
     public List<DefinitionOfTable> selectAllDefinitionOfTables(DefinitionOfTableDTO definitionDTO) {
 
-        DefinitionOfTable definitionOfTable = new DefinitionOfTable((definitionDTO.getProjectId()));
+        DefinitionOfTable definitionOfTable = new DefinitionOfTable(definitionDTO.getProjectId());
         List<DefinitionOfTable> result = definitionOfTableMapper.selectAllDefinitionOfTables(definitionOfTable);
 
         return result;
@@ -32,5 +32,12 @@ public class DefinitionOfTableService {
 
         return foundTable;
 
+    }
+
+    public List<DefinitionOfTable> selectTableByName(DefinitionOfTableDTO definitionDTO) {
+        DefinitionOfTable definitionOfTable = new DefinitionOfTable(definitionDTO.getTableName());
+        List<DefinitionOfTable> result = definitionOfTableMapper.selectDefinitionOfTableByName(definitionOfTable);
+
+        return result;
     }
 }

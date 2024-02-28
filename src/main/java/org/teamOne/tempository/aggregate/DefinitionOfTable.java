@@ -17,6 +17,10 @@ public class DefinitionOfTable {
     public DefinitionOfTable() {
     }
 
+    public DefinitionOfTable(String tableName) {
+        this.tableName = tableName;
+    }
+
     public DefinitionOfTable(int projectId) {
         this.projectId = projectId;
     }

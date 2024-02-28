@@ -17,6 +17,9 @@ public class DefinitionOfTableDTO {
     public DefinitionOfTableDTO() {
     }
 
+    public DefinitionOfTableDTO(String tableName) {
+        this.tableName = tableName;
+    }
 
     public DefinitionOfTableDTO(int projectId) {
         this.projectId = projectId;

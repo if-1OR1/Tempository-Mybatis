@@ -10,4 +10,6 @@ public interface DefinitionOfTableMapper {
     List<DefinitionOfTable> selectAllDefinitionOfTables(DefinitionOfTable definitionOfTable);
 
     DefinitionOfTable getDefinitionOfTableById(int tableId);
+
+    List<DefinitionOfTable> selectDefinitionOfTableByName(DefinitionOfTable definitionOfTable);
 }

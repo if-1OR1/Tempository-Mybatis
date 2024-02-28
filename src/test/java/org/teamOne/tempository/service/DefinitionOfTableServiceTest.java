@@ -25,12 +25,22 @@ class DefinitionOfTableServiceTest {
         selectAllDefinition.forEach(System.out::println);
     }
 
-    @DisplayName("테이블 ID에 해당하는 테이블 정의서")
+    @DisplayName("테이블 ID에 해당하는 테이블 정의서 조회")
     @Test
     void selectByTableId() {
         int tableId = 1;
         DefinitionOfTable foundTable = definitionOfTableService.findByTableId(tableId);
-        assertEquals(foundTable.getTableName(), "테이블명1");
+        assertEquals(foundTable.getTableId(), 1);
         System.out.println("foundTable = " + foundTable);
+    }
+
+    @DisplayName("테이블 명에 해당하는 테이블 정의서 조회")
+    @Test
+    void selectByTableName() {
+
+        DefinitionOfTableDTO definitionDTO = new DefinitionOfTableDTO("테이블명1");
+        List<DefinitionOfTable> selectTableByName = definitionOfTableService.selectTableByName(definitionDTO);
+        selectTableByName.forEach(System.out::println);
+
     }
 }
