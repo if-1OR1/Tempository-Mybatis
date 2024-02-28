@@ -18,16 +18,12 @@ public class RequirementService {
     }
 
     /* 설명. 프로젝트ID로 요구사항 명세서 내용 조회 */
-    public List<Requirement> requirementInfoByProjectId(RequirementDTO requirement) {
+    public List<Requirement> requirementInfoByProjectId(int projectId) {
+        List<Requirement> requirements = requirementMapper.requirementInfoByProjectId(projectId);
 
-        Requirement requirements = new Requirement(requirement.getProject_id());
+        requirements.forEach(System.out::println);
 
-
-        List<Requirement> result = requirementMapper.requirementInfoByProjectId(requirements);
-
-        result.forEach(System.out::println);
-
-        return result;
+        return requirements;
     }
 }
 

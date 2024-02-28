@@ -8,6 +8,6 @@ import java.util.List;
 @Mapper
 public interface RequirementMapper {
 
-    List<Requirement> requirementInfoByProjectId(Requirement requirements);
+    List<Requirement> requirementInfoByProjectId(int projectId);
 
 }

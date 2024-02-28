@@ -1,5 +1,6 @@
 package org.teamOne.tempository.service;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,9 @@ class RequirementServiceTest {
     @DisplayName("요구사항 조회 테스트")
     @Test
     void requirementInfoByProjectIdTest() {
+        List<Requirement> result = requirementService.requirementInfoByProjectId(1);
 
-        RequirementDTO requirement = new RequirementDTO(1);
-
-        List<Requirement> result = requirementService.requirementInfoByProjectId(requirement);
-
+        Assertions.assertNotNull(result);
     }
 
 }
