@@ -17,6 +17,7 @@ public class RequirementService {
         this.requirementMapper = requirementMapper;
     }
 
+    /* 설명. 프로젝트ID로 요구사항 명세서 내용 조회 */
     public List<Requirement> requirementInfoByProjectId(RequirementDTO requirement) {
 
         Requirement requirements = new Requirement(requirement.getProject_id());
