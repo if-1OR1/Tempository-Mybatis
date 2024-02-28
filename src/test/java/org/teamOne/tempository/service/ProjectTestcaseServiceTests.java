@@ -20,8 +20,7 @@ class ProjectTestcaseServiceTests {
     @DisplayName("프로젝트id로 테스트케이스 전체 조회")
     @Test
     void findAllProjectTestcaseTest() {
-        ProjectTestcaseDTO projectTestcaseDTO = new ProjectTestcaseDTO(1);
-        List<ProjectTestcase> projectTestcases = projectTestcaseService.findAllTestcaseByProjectId(projectTestcaseDTO);
+        List<ProjectTestcase> projectTestcases = projectTestcaseService.findAllTestcaseByProjectId(1);
 
         Assertions.assertNotNull(projectTestcases);
     }

@@ -8,6 +8,5 @@ import java.util.List;
 
 @Mapper
 public interface ProjectTestcaseMapper {
-
-    List<ProjectTestcase> findAllTestcaseByProjectId(ProjectTestcase projectTestcase);
+    List<ProjectTestcase> findAllTestcaseByProjectId(int projectId);
 }

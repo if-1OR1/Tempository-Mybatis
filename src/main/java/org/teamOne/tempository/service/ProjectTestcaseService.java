@@ -19,16 +19,11 @@ public class ProjectTestcaseService {
         this.projectTestcaseMapper = projectTestcaseMapper;
     }
 
+    /* 설명. projectId를 이용하여 해당 테스트케이스 전체 조회 */
+    public List<ProjectTestcase> findAllTestcaseByProjectId(int projectId) {
+        List<ProjectTestcase> projectTestcases = projectTestcaseMapper.findAllTestcaseByProjectId(projectId);
+        projectTestcases.forEach(System.out::println);
 
-
-
-    public List<ProjectTestcase> findAllTestcaseByProjectId(ProjectTestcaseDTO projectTestcaseDTO) {
-
-        ProjectTestcase projectTestcase = new ProjectTestcase(projectTestcaseDTO.getProjectId());
-        List<ProjectTestcase> testcases = projectTestcaseMapper.findAllTestcaseByProjectId(projectTestcase);
-        testcases.forEach(System.out::println);
-
-
-        return testcases;
+        return projectTestcases;
     }
 }
