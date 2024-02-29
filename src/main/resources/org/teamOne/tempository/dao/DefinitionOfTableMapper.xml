@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.teamOne.tempository.dao.DefinitionOfTableMapper">
+
+    <resultMap id="selectAllDefinitionMap" type="org.teamOne.tempository.aggregate.DefinitionOfTable">
+        <id property="tableId" column="ID"/>
+        <id property="projectId" column="PROJECT_ID"/>
+        <result property="definitionNo" column="DEFINITION_NO"/>
+        <result property="tableName" column="NAME"/>
+        <result property="propertyName" column="PROPERTY_NAME"/>
+        <result property="primaryKey" column="PRIMARY_KEY"/>
+        <result property="foreignKey" column="FOREIGN_KEY"/>
+        <result property="nullable" column="NULL_ABLE"/>
+        <result property="columnName" column="COLUMN_NAME"/>
+        <result property="defaultValue" column="DEFAULT_VALUE"/>
+        <result property="dataType" column="DATA_TYPE"/>
+        <result property="note" column="NOTE"/>
+    </resultMap>
+    <select id="selectAllDefinitionOfTables" resultMap="selectAllDefinitionMap">
+        SELECT
+            DEFINITION_NO
+        , NAME AS TABLE_NAME
+        , PROPERTY_NAME
+        , PRIMARY_KEY
+        , FOREIGN_KEY
+        , NULL_ABLE
+        , COLUMN_NAME
+        , DEFAULT_VALUE
+        , DATA_TYPE
+        , NOTE
+        , PROJECT_ID
+        FROM TBL_PROJECT_DEFINITION_OF_TABLE
+        WHERE PROJECT_ID = #{projectId}
+    </select>
+
+    <select id="getDefinitionOfTableById" resultMap="selectAllDefinitionMap">
+        SELECT
+          ID
+        , DEFINITION_NO
+        , NAME AS TABLE_NAME
+        , PROPERTY_NAME
+        , PRIMARY_KEY
+        , FOREIGN_KEY
+        , NULL_ABLE
+        , COLUMN_NAME
+        , DEFAULT_VALUE
+        , DATA_TYPE
+        , NOTE
+        , PROJECT_ID
+        FROM TBL_PROJECT_DEFINITION_OF_TABLE
+        WHERE ID = #{tableId}
+    </select>
+
+    <select id="selectDefinitionOfTableByName" resultMap="selectAllDefinitionMap">
+        SELECT
+        ID
+        , DEFINITION_NO
+        , NAME
+        , PROPERTY_NAME
+        , PRIMARY_KEY
+        , FOREIGN_KEY
+        , NULL_ABLE
+        , COLUMN_NAME
+        , DEFAULT_VALUE
+        , DATA_TYPE
+        , NOTE
+        , PROJECT_ID
+        FROM TBL_PROJECT_DEFINITION_OF_TABLE
+        WHERE NAME = #{tableName}
+    </select>
+</mapper>

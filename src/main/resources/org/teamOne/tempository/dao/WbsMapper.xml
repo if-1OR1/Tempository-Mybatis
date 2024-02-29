@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.teamOne.tempository.dao.WbsMapper">
+
+    <resultMap id="WbsResultMap" type="org.teamOne.tempository.aggregate.Wbs">
+        <id property="id" column="ID"/>
+        <result property="wbsNo" column="WBS_NO"/>
+        <result property="content" column="CONTENT"/>
+        <result property="taskStatus" column="TASK_STATUS"/>
+        <result property="startDate" column="START_DATE"/>
+        <result property="endDate" column="END_DATE"/>
+        <result property="managerId" column="MANAGER_ID"/>
+        <result property="projectId" column="PROJECT_ID"/>
+    </resultMap>
+
+    <select id="findAllWbsByProjectId" resultMap="WbsResultMap" parameterType="org.teamOne.tempository.aggregate.Wbs">
+        SELECT
+              ID
+            , WBS_NO
+            , CONTENT
+            , TASK_STATUS
+            , START_DATE
+            , END_DATE
+            , MANAGER_ID
+            , PROJECT_ID
+          FROM tbl_project_wbs;
+    </select>
+
+    <select id="findWbsByManagerId" resultMap="WbsResultMap" parameterType="_int">
+        SELECT
+              ID
+            , WBS_NO
+            , CONTENT
+            , TASK_STATUS
+            , START_DATE
+            , END_DATE
+            , MANAGER_ID
+            , PROJECT_ID
+          FROM tbl_project_wbs
+         WHERE MANAGER_ID = #{managerId}
+    </select>
+
+</mapper>

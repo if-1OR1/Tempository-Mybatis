@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.teamOne.tempository.dao.RequirementMapper">
+
+    <resultMap id="requirementResultMap" type="org.teamOne.tempository.aggregate.Requirement">
+        <id property="projectId" column="PROJECT_ID"/>
+        <result property="requirementNo" column="REQUIREMENT_NO"/>
+        <result property="separate" column="SEPARATE"/>
+        <result property="name" column="NAME"/>
+        <result property="content" column="CONTENT"/>
+    </resultMap>
+
+    <select id="requirementInfoByProjectId" resultMap="requirementResultMap" parameterType="org.teamOne.tempository.aggregate.Requirement">
+        SELECT A.ID
+             , A.REQUIREMENT_NO
+             , A.SEPARATE
+             , A.NAME
+             , A.CONTENT
+          FROM TBL_PROJECT_REQUIREMENT A
+         WHERE A.PROJECT_ID = #{ projectId }
+    </select>
+
+    <select id="requirementInfoBySeparate" resultMap="requirementResultMap" parameterType="org.teamOne.tempository.aggregate.Requirement">
+        SELECT A.ID
+        , A.PROJECT_ID
+        , A.REQUIREMENT_NO
+        , A.SEPARATE
+        , A.NAME
+        , A.CONTENT
+        FROM TBL_PROJECT_REQUIREMENT A
+        WHERE A.SEPARATE LIKE '%' #{separate} '%'
+    </select>
+</mapper>
