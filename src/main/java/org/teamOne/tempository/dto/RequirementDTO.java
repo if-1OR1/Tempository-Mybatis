@@ -4,6 +4,20 @@ public class RequirementDTO {
     private int id;
     private int project_id;
 
+    private String separate;
+
+    public String getSeparate() {
+        return separate;
+    }
+
+    public RequirementDTO(String separate) {
+        this.separate = separate;
+    }
+
+    public void setSeparate(String separate) {
+        this.separate = separate;
+    }
+
     public RequirementDTO(int id, int project_id) {
         this.id = id;
         this.project_id = project_id;
@@ -12,6 +26,7 @@ public class RequirementDTO {
     public RequirementDTO(int project_id) {
         this.project_id = project_id;
     }
+
 
     public RequirementDTO() {
     }

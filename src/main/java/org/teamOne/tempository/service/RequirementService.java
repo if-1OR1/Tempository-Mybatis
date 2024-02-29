@@ -19,11 +19,21 @@ public class RequirementService {
 
     /* 설명. 프로젝트ID로 요구사항 명세서 내용 조회 */
     public List<Requirement> requirementInfoByProjectId(int projectId) {
-        List<Requirement> requirements = requirementMapper.requirementInfoByProjectId(projectId);
+        List<Requirement> findByProjectId = requirementMapper.requirementInfoByProjectId(projectId);
 
-        requirements.forEach(System.out::println);
+        findByProjectId.forEach(System.out::println);
 
-        return requirements;
+        return findByProjectId;
+    }
+
+    /* 설명. 요구사항 구분으로 요구사항 명세서 내용 조회 */
+    public List<Requirement> requirementInfoBySeparate(String separate) {
+
+        List<Requirement> findBySeparate = requirementMapper.requirementInfoBySeparate(separate);
+
+        findBySeparate.forEach(System.out::println);
+
+        return findBySeparate;
     }
 }
 

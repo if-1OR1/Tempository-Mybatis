@@ -10,4 +10,5 @@ public interface RequirementMapper {
 
     List<Requirement> requirementInfoByProjectId(int projectId);
 
+    List<Requirement> requirementInfoBySeparate(String separate);
 }

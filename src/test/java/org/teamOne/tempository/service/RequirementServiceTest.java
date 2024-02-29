@@ -24,4 +24,17 @@ class RequirementServiceTest {
         Assertions.assertNotNull(result);
     }
 
+    @DisplayName("요구사항 조회 테스트")
+    @Test
+    void requirementInfoBySeparate() {
+        String separate1= "사용자";
+        String separate2 = "상품";
+
+        List<Requirement> findBySeparate1 = requirementService.requirementInfoBySeparate(separate1);
+        List<Requirement> findBySeparate2 = requirementService.requirementInfoBySeparate(separate2);
+
+        Assertions.assertNotNull(findBySeparate1);
+        Assertions.assertNotNull(findBySeparate2);
+    }
+
 }
