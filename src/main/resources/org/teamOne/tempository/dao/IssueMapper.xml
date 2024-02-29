@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.teamOne.tempository.dao.IssueMapper">
+
+    <resultMap id="findListOfIssueMap" type="org.teamOne.tempository.aggregate.Issue">
+        <id property="issueId" column="ID"/>
+        <result property="projectId" column="PROJECT_ID"/>
+        <result property="managerId" column="MANAGER_ID"/>
+        <result property="writerId" column="WRITER_ID"/>
+        <result property="issueNo" column="ISSUE_NO"/>
+        <result property="issueName" column="ISSUE_NAME"/>
+        <result property="issueStatus" column="ISSUE_STATUS"/>
+        <result property="issueContent" column="ISSUE_CONTENT"/>
+    </resultMap>
+    <select id="selectIssueByProjectId" resultMap="findListOfIssueMap">
+        SELECT
+               ID
+             , PROJECT_ID
+             , ISSUE_NO
+             , ISSUE_NAME
+             , ISSUE_STATUS
+             , ISSUE_CONTENT
+             , MANAGER_ID
+             , WRITER_ID
+          FROM TBL_PROJECT_ISSUE
+         WHERE PROJECT_ID = #{projectId}
+    </select>
+</mapper>
